@@ -10,6 +10,7 @@ class Myorders extends Component {
     this.state = {
       orders: [],
       order: null,
+      selectedOrdId: null
     };
   }
 
@@ -17,10 +18,12 @@ class Myorders extends Component {
     return this.state.orders.map((item) => (
       <tr
         key={item._id}
-        className="border-b cursor-pointer text-center"
+        // className="border-b cursor-pointer text-center"
+        className={`border text-center border-gray-300 hover:bg-gray-100 cursor-pointer ${
+          index % 2 === 0 ? "bg-white" : "bg-gray-100"} ${this.state.selectedOrdId === item._id ? "bg-yellow-300 hover:bg-yellow-200" : ""}`}
         onClick={() => this.handleOrderClick(item)}
       >
-        <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">{item._id}</td>
+        <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">{item._id.slice(-5)}</td>
         <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">{new Date(item.cdate).toLocaleString()}</td>
         <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">{item.customer.name}</td>
         <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">{item.customer.phone}</td>
@@ -33,9 +36,9 @@ class Myorders extends Component {
   renderOrderItems() {
     if (this.state.order) {
       return this.state.order.items.map((item, index) => (
-        <tr key={item.product._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        <tr key={item.product._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center">
           <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">{index + 1}</td>
-          <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">{item.product._id}</td>
+          <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">{item.product._id.slice(-5)}</td>
           <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">{item.product.name}</td>
           <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">
             <img
@@ -81,7 +84,7 @@ class Myorders extends Component {
         {this.state.order && (
           <div className="mt-8">
             <div className="text-center mb-6">
-              <h2 className="text-2xl font-bold">Order Detail</h2>
+              <h2 className="text-2xl font-bold  dark:text-white">Order Detail</h2>
             </div>
 
             <table className="w-full border-collapse border">
@@ -112,7 +115,7 @@ class Myorders extends Component {
   }
 
   handleOrderClick(order) {
-    this.setState({ order });
+    this.setState({ order, selectedOrdId: order._id });
   }
 
   fetchOrdersByCustomerId(customerId) {

@@ -20,7 +20,7 @@ class Category extends Component {
         key={item._id}
         className={`text-center border border-gray-300 hover:bg-gray-100 cursor-pointer ${
           index % 2 === 0 ? "bg-white" : "bg-gray-100"
-        } ${this.state.selectedItemId === item._id ? "bg-yellow-300" : ""}`}
+        } ${this.state.selectedItemId === item._id ? "bg-yellow-300 hover:bg-yellow-200" : ""}`}
         onClick={() => this.trItemClick(item)}
       >
         <td className="py-2 px-4 text-center">{item._id.slice(-5)}</td>

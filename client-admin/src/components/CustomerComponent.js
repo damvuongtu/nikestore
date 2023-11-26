@@ -42,7 +42,7 @@ class Customer extends Component {
         key={item._id}
         className={`border text-center border-gray-300 hover:bg-gray-100 cursor-pointer ${
           index % 2 === 0 ? "bg-white" : "bg-gray-100"
-        } ${this.state.selectedCustomerId === item._id ? "bg-yellow-300" : ""}`}
+        } ${this.state.selectedCustomerId === item._id ? "bg-yellow-300 hover:bg-yellow-200" : ""}`}
         onClick={() => this.trCustomerClick(item)}
       >
         <td className="py-2 px-4">{item._id.slice(-5)}</td>
@@ -81,7 +81,7 @@ class Customer extends Component {
         key={item._id}
         className={`border text-center border-gray-300 hover:bg-gray-100 cursor-pointer ${
           index % 2 === 0 ? "bg-white" : "bg-gray-100"
-        } ${this.state.selectedOrdId === item._id ? "bg-yellow-300" : ""}`}
+        } ${this.state.selectedOrdId === item._id ? "bg-yellow-300 hover:bg-yellow-200" : ""}`}
         onClick={() => this.trOrderClick(item)}
       >
         <td className="py-2 px-4">{item._id.slice(-5)}</td>
