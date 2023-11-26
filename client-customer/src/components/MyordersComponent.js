@@ -71,7 +71,7 @@ class Myorders extends Component {
       return this.state.order.items.map((item, index) => (
         <tr
           key={item.product._id}
-          className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center"
+          className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-center dark:bg-gray-800"
         >
           <td className="px-6 py-4 text-lg text-gray-900 dark:text-white">
             {index + 1}
