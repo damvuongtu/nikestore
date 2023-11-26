@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import MyContext from "../contexts/MyContext";
-import { FaCheck, FaTimes } from "react-icons/fa";
 
 class Myorders extends Component {
   static contextType = MyContext; // using this.context to access global state
@@ -31,11 +30,11 @@ class Myorders extends Component {
       <tr
         key={item._id}
         // className="border-b cursor-pointer text-center"
-        className={`border text-center border-gray-300 hover:bg-gray-100 cursor-pointer ${
-          index % 2 === 0 ? "bg-white" : "bg-gray-100"
+        className={`border text-center border-gray-300 hover:bg-gray-100  dark:bg-gray-800 cursor-pointer ${
+          index % 2 === 0 ? "bg-white dark:bg-gray-800" : "bg-gray-100 dark:bg-gray-700"
         } ${
           this.state.selectedOrdId === item._id
-            ? "bg-yellow-300 hover:bg-yellow-200"
+            ? "bg-yellow-300 hover:bg-yellow-200 dark:text-gray-900"
             : ""
         }`}
         onClick={() => this.handleOrderClick(item)}
