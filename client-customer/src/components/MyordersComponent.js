@@ -115,7 +115,7 @@ class Myorders extends Component {
           Order List
         </h2>
 
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:bg-gray-900">
           <thead>
             <tr className="bg-gray-200">
               <th className="px-6 py-3 text-lg text-gray-900 dark:bg-gray-900 dark:text-white text-center">
