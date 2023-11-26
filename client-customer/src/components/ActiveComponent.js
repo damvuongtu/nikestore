@@ -24,7 +24,7 @@ class Active extends Component {
 
   render() {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen dark:bg-gray-900">
         <div className="bg-white p-8 shadow-md rounded-md w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
           <h2 className="text-center text-2xl font-bold mb-4">ACTIVE ACCOUNT</h2>
           {this.renderAlert()}
