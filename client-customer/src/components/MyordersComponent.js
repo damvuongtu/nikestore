@@ -15,7 +15,7 @@ class Myorders extends Component {
   }
 
   renderOrders() {
-    return this.state.orders.map((item) => (
+    return this.state.orders.map((item,index) => (
       <tr
         key={item._id}
         // className="border-b cursor-pointer text-center"
